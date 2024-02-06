@@ -1,0 +1,28 @@
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.vscode/
+
+# IDE specific
+.idea/
+.vscode/
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Compiled files
+*.dll
+*.exe
+*.o
+
+# Miscellaneous
+.DS_Store
+node_modules/
