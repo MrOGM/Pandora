@@ -18,7 +18,7 @@ def download():
         return jsonify({"error": "Missing 'url' parameter"}), 400
 
     # Return a success response with the provided 'url'
-    return jsonify({"success :()": youtube_url}), 200
+    return jsonify({"success": youtube_url}), 200
 
 
 # @app.route("/download", methods=["POST"])
