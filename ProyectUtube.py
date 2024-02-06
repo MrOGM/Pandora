@@ -9,20 +9,32 @@ import os
 app = Flask(__name__)
 
 
-@app.route("/download", methods=["POST"])
-def Download1():
-    try:
-        data = request.get_json()
-        youtube_url = data.get("url")
-        # Check if the request data is in form-data or urlencoded format
+@app.route("/download", methods=["GET"])
+def download():
+    # Check if the 'url' parameter is provided in the query string
+    youtube_url = request.args.get("url")
+    if not youtube_url:
+        # Return an error response if 'url' parameter is missing
+        return jsonify({"error": "Missing 'url' parameter"}), 400
 
-        if youtube_url:
-            return jsonify({"succes": youtube_url})
-        else:
-            return jsonify({"error": "Failed to download or extract MP3."}), 500
+    # Return a success response with the provided 'url'
+    return jsonify({"success :()": youtube_url}), 200
 
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+
+# @app.route("/download", methods=["POST"])
+# def Download1():
+#     try:
+#         data = request.get_json()
+#         youtube_url = data.get("url")
+#         # Check if the request data is in form-data or urlencoded format
+
+#         if youtube_url:
+#             return jsonify({"succes": youtube_url})
+#         else:
+#             return jsonify({"error": "Failed to download or extract MP3."}), 500
+
+#     except Exception as e:
+#         return jsonify({"error": str(e)}), 500
 
 
 # Deletes the MP4 video downloaded for extracting MP3
@@ -142,9 +154,9 @@ def PlaylistDownloader(Playlist_url):
         YtDownloader(url)
 
 
+# 2c0SFB7G0lXx036mNAIRaW6Vixr_7ErDRhZvm8PzXxwoLzkuv
 if __name__ == "__main__":
-    app.run(debug=True)
-
+    app.run(host="0.0.0.0", port=5000)
 # # Example usage
 # youtube_url = "https://www.youtube.com/watch?v=gK5IKEgt7e4"
 
