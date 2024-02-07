@@ -29,3 +29,6 @@ env/
 # Miscellaneous
 .DS_Store
 node_modules/
+
+# Ignore service account key for Firebase
+pandora-qs325r-firebase-adminsdk-uulau-ead47b9736.json
