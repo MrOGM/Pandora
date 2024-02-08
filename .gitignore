@@ -11,6 +11,7 @@ downloadsAudio/
 venv/
 env/
 .vscode/
+.env
 
 # IDE specific
 .idea/
